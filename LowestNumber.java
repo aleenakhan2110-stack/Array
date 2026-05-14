@@ -3,13 +3,17 @@ public class LowestNumber {
     static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         int N=sc.nextInt();
-        int min=Integer.MAX_VALUE;
-        int position=0;
-        for(int i=0;i<=N;i++){
-            int current=sc.nextInt();
-            if(current<min){
-                min=current;
-                position=i;
+        int [] arr=new int[N];
+        for(int i=0;i<N;i++){
+            arr[i]=sc.nextInt();
+        }
+        int min=arr[0];
+        int position=1;
+        for(int i=0;i<N;i++){
+
+            if(arr[i]<min){
+                min=arr[i];
+                position=i+1;
             }
         }
         System.out.println(min+" "+position);
