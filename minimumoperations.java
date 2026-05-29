@@ -8,17 +8,26 @@ public class minimumoperations {
            A[i]=sc.nextInt();
 
        }
-       int maxOperations=Integer.MAX_VALUE;
-       for(int i=0;i<N;i++){
-           int count=0;
-           if(A[i]%2==0){
-               A[i]/=2;
-               count++;
+      int count=0;
+       boolean canPreform=true;
 
+       while(true){
+           for(int i=0;i<N;i++){
+               if(A[i]%2!=0){
+                   canPreform=false;
+                   break;
+               }
+               A[i]/=2;
            }
-           maxOperations=Math.min(maxOperations,count);
+           if(canPreform){
+               count++;
+           }
+           else{
+               break;
+           }
        }
-       System.out.println(maxOperations);
+       System.out.println(count);
+
 
     }
 }
