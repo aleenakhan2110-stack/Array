@@ -10,7 +10,7 @@ public class frequencyinArray {
             int num=sc.nextInt();
             freq[num]++;
         }
-        for(int i=1;i<M;i++){
+        for(int i=1;i<=M;i++){
             System.out.println(freq[i]);
         }
 
